@@ -2,6 +2,8 @@
 import './styles/main.scss';
 import getPhotos from './api.js';
 
+getPhotos();
+
 const searchList = JSON.parse(localStorage.getItem('search')) || [];
 
 const search = document.createElement('INPUT');
@@ -45,4 +47,6 @@ const app = document.querySelector('#root')
 app.append(search);
 app.append(submitbtn);
 app.append(searchHistory);
+
+
 
