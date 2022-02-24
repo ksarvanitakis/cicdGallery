@@ -1,8 +1,6 @@
 // import aunty from './images/aunty.png'
-import './styles/main.scss';
-import getPhotos from './api.js';
-
-console.log('here you change')
+require ('./styles/main.scss');
+const getPhotos = require('./api.js');
 
 /////Search///////////
 const searchList = JSON.parse(localStorage.getItem('search')) || [];
@@ -56,10 +54,17 @@ imageContainer.className = "image-container"
 
 // // Append heading node to the DOM
 const app = document.querySelector('#root')
-app.append(searchContainer);
-app.append(imageContainer);
 
+const buildDOM = (element) => {
+    element.append(searchContainer);
+    element.append(imageContainer);
+}
 
+buildDOM(app)
+// app.append(searchContainer);
+// app.append(imageContainer);
+
+module.exports = buildDOM;
 
 
 
