@@ -25,14 +25,14 @@ renderList()
 search.appendChild(dataList);
 
 /////////////button//////////
+const searchContainer = document.createElement('div');
+searchContainer.classList = 'search-container';
 const submitbtn = document.createElement('BUTTON');
 submitbtn.textContent = "search"
 
 const searchHistory = document.createElement('P');
 
 submitbtn.addEventListener('click', () => {
-    //imageContainer.removeChild('img');
-   
     while (imageContainer.firstChild) {
         imageContainer.firstChild.remove()
     }
@@ -45,16 +45,19 @@ submitbtn.addEventListener('click', () => {
     dataList.appendChild(option);
     getPhotos(value);
 });
+searchContainer.appendChild(search);
+searchContainer.appendChild(submitbtn);
+
 //////////div/////
 const imageContainer = document.createElement('div')
 imageContainer.className = "image-container"
 
 // // Append heading node to the DOM
 const app = document.querySelector('#root')
-app.append(search);
-app.append(submitbtn);
-app.append(searchHistory);
+app.append(searchContainer);
 app.append(imageContainer);
+
+
 
 
 
