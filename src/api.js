@@ -25,5 +25,4 @@ const loadImages = (data) => {
     }
 }
 
-console.log('hello');
 module.exports = getPhotosFromUnsplash;
