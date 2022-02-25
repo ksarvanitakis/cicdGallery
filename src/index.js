@@ -32,8 +32,6 @@ searchContainer.classList = 'search-container';
 const submitbtn = document.createElement('BUTTON');
 submitbtn.textContent = "search"
 
-const searchHistory = document.createElement('P');
-
 submitbtn.addEventListener('click', () => {
     while (imageContainer.firstChild) {
         imageContainer.firstChild.remove()
@@ -45,7 +43,10 @@ submitbtn.addEventListener('click', () => {
     const option = document.createElement('option');
     option.setAttribute("value", value);
     dataList.appendChild(option);
+    history.pushState({value}, `Selected: ${value}`, `./selected=${value}`)
     getPhotos(value);
+    search.value="";
+    
 });
 searchContainer.appendChild(search);
 searchContainer.appendChild(submitbtn);
@@ -58,6 +59,12 @@ imageContainer.className = "image-container"
 const app = document.querySelector('#root')
 app.append(searchContainer);
 app.append(imageContainer);
+window.addEventListener('popstate', e => {
+    while (imageContainer.firstChild) {
+        imageContainer.firstChild.remove()
+    }
+    getPhotos(e.state.value);
+});
 
 
 
