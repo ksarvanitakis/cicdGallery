@@ -7,7 +7,7 @@ phases:
     - curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
     - apt install -y nodejs
     - echo Installing npm 
-    - apt install -y npm
+    
     pre_build:
       commands: 
     - echo Installing dependencies
