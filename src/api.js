@@ -1,5 +1,5 @@
 const getPhotosFromUnsplash = (value) => {
-    const photos = fetch(`https://api.unsplash.com/search/photos?query=${value}&client_id=hraxE2dYfvMDF9u9uvl2eGW6s1zDW2JVWUMcB-83khQ`)
+    const photos = fetch(`https://api.unsplash.com/search/photos?query=${value}&client_id=${process.env.API_KEY}`)
         .then(response => response.json())
         .then(data => loadImages(data))
 }

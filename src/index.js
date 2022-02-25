@@ -1,8 +1,5 @@
-// import aunty from './images/aunty.png'
 import './styles/main.scss';
 import getPhotos from './api.js';
-
-console.log('here you change')
 
 /////Search///////////
 const searchList = JSON.parse(localStorage.getItem('search')) || [];
