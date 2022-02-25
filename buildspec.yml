@@ -8,6 +8,7 @@ phases:
     - apt install -y nodejs
     - curl -sL https://deb.nodesource.com/setup_14.x | bash -
     - echo Installing npm 
+    - apt install npm
     
     pre_build:
       commands: 
@@ -21,6 +22,6 @@ phases:
         - npm run build
 artifacts: 
   files:
-    - "**/*"
+    - "dist/**/*"
   discard-paths: no
-  base-directory: dist
+  
