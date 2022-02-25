@@ -24,4 +24,6 @@ const loadImages = (data) => {
         document.querySelector(".image-container").appendChild(flipCard);
     }
 }
+
+console.log('hello');
 module.exports = getPhotosFromUnsplash;
